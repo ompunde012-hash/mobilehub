@@ -35,7 +35,8 @@ app.secret_key = os.environ.get(
     "mobilehub-dev-secret-change-this"
 )
 
-DB = "shop.db"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB = os.path.join(BASE_DIR, "shop.db")
 
 RAZORPAY_KEY_ID = os.environ.get(
     "RAZORPAY_KEY_ID",
@@ -4444,4 +4445,6 @@ if __name__ == "__main__":
         port=5000,
         debug=True
     )
+
+
 
